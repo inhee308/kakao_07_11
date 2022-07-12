@@ -96,7 +96,7 @@
   }
   
   .section-1 > .con-2 {
-    background-image: url(/images/main-bg3.png);
+    background-image: url(https://www.kakaobank.com/static/images/web/renewal/main-bg3.png);
     background-position: center 0;
     width: 1200px;
     background-size: 1200px;
@@ -117,7 +117,7 @@
   }
   
   .main-content .link-store .img-kabang {
-    background-image: url(/images/img_kabang_210628.png);
+    background-image: url(	https://www.kakaobank.com/static/images/web/img_kabang_210628.png);
     width: 24px;
     height: 24px;
     margin: -4px 10px 0 0;
@@ -290,7 +290,7 @@
   }
   
   .top-banner-box-6-wrap {
-    background-image: url(/images/home_map.png);
+    background-image: url(https://www.kakaobank.com/static/images/web/home_map.png);
     background-repeat: no-repeat;
     background-position: 0 50%;
   }
@@ -735,7 +735,7 @@
   }
   
   .ico-2 {
-    background-image: url(/images/ico_sns.png);
+    background-image: url(https://www.kakaobank.com/static/images/web/ico_sns.png);
     width: 24px;
     height: 24px;
   }

@@ -8,82 +8,98 @@
 
 html > body {
   font-family: "GmarketSansMedium";
-  /*   background-color: #afafaf; */
+  text-underline-position: under;
 }
 
+/* lib  */
 .con {
   width: 1080px;
   margin-left: auto;
   margin-right: auto;
 }
 
+.con-min-width {
+  min-width: 1200px;
+}
 
-.top-bar .con .menu-1 > ul > li > a {
+/* 커스텀 */
+/* 탑바 구현 시작 */
+
+.top-bar {
   position: relative;
 }
 
-.top-bar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 999;
+.menu-1 > ul > li > a {
+  position: relative;
 }
 
-
-.top-bar .con .menu-1 > ul > li > a::after {
-  position: absolute;
+.menu-1 > ul > li > a::after {
   content: "";
+  position: absolute;
   bottom: 0;
   left: 0;
-  width: 0;
+  width: 0%;
   height: 2px;
-  transition: width 0.3s;
   background-color: black;
+  transition: width 0.3s;
 }
 
-.top-bar .con .menu-1 > ul > li:hover > a::after {
+.menu-1 > ul > li:hover > a::after {
   width: 100%;
 }
 
-.top-bar .con .menu-1 > ul > li > div {
+/* 2, 3차 메뉴 레이아웃  */
+.menu-1 > ul > li > div {
   position: absolute;
   display: none;
   left: 0;
+  top: 100%;
   width: 100%;
+  background-color: white;
+  transform: translateY(1px);
   padding-top: 40px;
   padding-bottom: 40px;
-  transform: translateY(1px);
-  background-color: white;
   z-index: 9999;
 }
 
-.top-bar .con .menu-1 > ul > li:hover > div {
+.menu-1 > ul > li:hover > div {
   display: block;
 }
 
-.top-bar .con .menu-1 > ul > li > div ul > li > a {
+/* 2, 3차 메뉴 아이템 텍스트 */
+.menu-1 > ul > li > div ul > li > a {
   display: block;
   text-align: center;
 }
 
-.top-bar .con .menu-1 > ul > li > div > div > ul > li > a {
+/* 2차 메뉴 아이템 텍스트  */
+.menu-1 > ul > li > div > div > ul > li > a {
   padding: 20px 0;
-  text-align: center;
 }
 
-.top-bar .con .menu-1 > ul > li > div > div > ul > li > ul > li > a {
+/* 3차 메뉴 아이템 텍스트  */
+.menu-1 > ul > li > div > div > ul > li > ul > li > a {
   padding: 10px 0;
   font-size: 13px;
 }
 
-.con-2 {
-  width: 1200px;
+/* 탑바 구현 끝 */
+
+/* 상단배너 구현 시작 */
+.section-1 {
   position: relative;
 }
 
-.top-img {
+.con-2 {
+  width: 1080px;
   position: relative;
+}
+
+.section-1 > .con-2 {
+  background-image: url(https://www.kakaobank.com/static/images/web/renewal/main-bg3.png);
+  background-position: center 0;
+  width: 1200px;
+  background-size: 1200px;
 }
 
 .background-line {
@@ -95,8 +111,7 @@ html > body {
 
 .main-content {
   position: absolute;
-  height: 500px;
-  width: 382px;
+  width: 383px;
   top: 175px;
   left: 90px;
 }
@@ -105,7 +120,7 @@ html > body {
   background-image: url(https://www.kakaobank.com/static/images/web/img_kabang_210628.png);
   width: 24px;
   height: 24px;
-  margin: -2px 10px 0 0;
+  margin: -4px 10px 0 0;
   background-position: -341px -292px;
 }
 
@@ -113,33 +128,22 @@ html > body {
   background-position: -371px -292px;
 }
 
-/* 상단 배너박스 타입1 시작 */
+/* 상단 배너박스 타입 1 시작 */
 .top-banner-box-type-1 {
+  min-height: 500px;
   display: flex;
-  min-height: 720px;
-}
-
-.top-banner-box-type-1__between-pad {
-  height: 20px;
-  background-color: #fafafa;
 }
 
 .top-banner-box-type-1 > div:first-child {
   width: 55%;
-  align-items: center;
   display: flex;
-  /*   background-color:#ffafaf; */
+  align-items: center;
 }
 
 .top-banner-box-type-1 > div:last-child {
   flex-grow: 1;
-  align-items: center;
   display: flex;
-  /*   background-color:#afafff; */
-}
-
-.top-banner-box-2 .img-box {
-  width: 473px;
+  align-items: center;
 }
 
 .top-banner-box-type-1 .txt-box > h1 {
@@ -151,6 +155,7 @@ html > body {
 .top-banner-box-type-1 .txt-box > .des {
   margin-top: 24px;
   font-size: 15px;
+  font-weight: 400;
   line-height: 1.7;
   color: #666;
 }
@@ -159,21 +164,22 @@ html > body {
   display: flex;
   margin-top: 40px;
 }
+
 .top-banner-box-type-1 .txt-box > .btn-box > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #f6f6f6;
   width: 258px;
   height: 56px;
   font-size: 16px;
-  line-height: 56px;
   color: #333;
   border-radius: 10px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
 }
 
-.top-banner-box-3 .img-box {
-  width: 409px;
+.top-banner-box-type-1 .txt-box > .btn-box > a::after {
+  content: ">";
+  margin-left: 10px;
 }
 
 .top-banner-box-type-1 .txt-box > .btn-box > a:hover > span {
@@ -188,26 +194,113 @@ html > body {
   margin-right: 5px;
 }
 
+.top-baneer-box-type-1__between-pad {
+  height: 20px;
+  background-color: #fafafa;
+}
+
+/* 상단 배너박스 타입 1 끝 */
+
+/* 상단 배너박스 2 시작 */
+.top-banner-box-2 > div:first-child > * {
+  margin-left: 50px;
+}
+
+.top-banner-box-2 > div:last-child > * {
+  margin-left: 40px;
+}
+
+.top-banner-box-2 .img-box {
+  width: 473px;
+}
+
+/* 상단 배너박스 2 끝 */
+
+/* 상단 배너박스 3 시작 */
+.top-banner-box-3 > div:first-child > * {
+  margin-left: 83px;
+}
+
+.top-banner-box-3 > div:last-child > * {
+  margin-left: 80px;
+}
+
+.top-banner-box-3 .img-box {
+  width: 409px;
+}
+
+.top-banner-box-3 .img-box-1 {
+  margin-top: 50px;
+}
+
+.top-banner-box-3 .img-box-1 > img {
+  width: 440px;
+}
+
+.top-banner-box-3 .img-box > img {
+  transition: transform 1s cubic-bezier(0.6, 0.2, 0.1, 1), opacity 1s;
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.top-banner-box-3 .img-box.active > img {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 상단 배너박스 3 끝 */
+
+/* 상단 배너박스 4 시작 */
+.top-banner-box-4 > div:first-child > * {
+  margin-left: 70px;
+}
+
+.top-banner-box-4 > div:last-child > * {
+  margin-left: 40px;
+}
+
+.top-banner-box-4 .img-box {
+  width: 460px;
+}
+
+/* 상단 배너박스 4 끝 */
+
+/* 상단 배너박스 5 시작 */
+.top-banner-box-5 > div:first-child > * {
+  margin-left: 140px;
+}
+
+.top-banner-box-5 > div:last-child > * {
+  margin-left: -10px;
+}
+
+.top-banner-box-5 .img-box {
+  width: 492px;
+}
+
+/* 상단 배너박스 5 끝 */
+
+/* 상단 배너박스 6 시작 */
+.top-banner-box-6 > div:first-child > * {
+  margin-left: 80px;
+}
+
+.top-banner-box-6 > div:last-child > * {
+  margin-left: 40px;
+}
+
 .top-banner-box-6-wrap {
   background-image: url(https://www.kakaobank.com/static/images/web/home_map.png);
   background-repeat: no-repeat;
   background-position: 0 50%;
 }
 
-/*이미지 애니메이션 */
-.top-banner-box-3 .img-box > img {
-  transition: transform 1s cubic-bezier(0.6, 0.2, 0.1, 1);
-  opacity: 0;
-  transform: translatex(100%);
-}
-
-.top-banner-box-3 .img-box.active > img {
-  opacity: 1;
-  transform: translatex(0);
+.top-banner-box-6 .img-box {
+  width: 408px;
 }
 
 .top-banner-box-6 .img-box > img {
-  transition: transform 1s cubic-bezier(0.6, 0.2, 0.1, 1);
+  transition: transform 1s cubic-bezier(0.6, 0.2, 0.1, 1), opacity 1s;
   opacity: 0;
   transform: translateY(100%);
 }
@@ -217,12 +310,19 @@ html > body {
   transform: translateY(0);
 }
 
-/*대출박스별  */
+/* 상단 배너박스 6 끝 */
+
+/* 대출박스 시작  */
 .loan-box {
   position: relative;
   z-index: 0;
   color: white;
-  padding-top: 160px;
+  padding-top: 150px;
+}
+
+.loan-box > .con {
+  position: relative;
+  z-index: 1;
 }
 
 .loan-box > .sky {
@@ -245,11 +345,6 @@ html > body {
 
 .loan-box.active > .sky > .blue {
   height: 0;
-}
-
-.loan-box > .con {
-  z-index: 1;
-  position: relative;
 }
 
 .loan-box > .sky > .moon {
@@ -276,7 +371,6 @@ html > body {
 .loan-box > .sky > .moon > .shadow {
   width: 100%;
   height: 100%;
-  /*   background-color: #333b58; */
   position: absolute;
   top: -100%;
   left: -100%;
@@ -289,12 +383,8 @@ html > body {
   left: -23%;
   background-color: #333b58;
 }
-
-/* 대출박스 별 적용 */
-.loan-box .sky {
-  background-color: #333b58;
-}
-.loan-box .sky .ico-star {
+/* 대출박스 - 별 시작 */
+.loan-box > .sky .ico-star {
   position: absolute;
   width: 4px;
   height: 4px;
@@ -302,29 +392,39 @@ html > body {
   background-color: #fff;
 }
 
-.loan-box .sky .ico-star-1 {
+.loan-box > .sky .ico-star-1 {
   top: 30%;
   left: 10%;
 }
-.loan-box .sky .ico-star-2 {
+
+.loan-box > .sky .ico-star-2 {
   top: 10%;
   left: 20%;
 }
-.loan-box .sky .ico-star-3 {
+
+.loan-box > .sky .ico-star-3 {
   top: 25%;
   left: 15%;
 }
-.loan-box .sky .ico-star-4 {
+
+.loan-box > .sky .ico-star-4 {
   top: 40%;
   right: 15%;
 }
-.loan-box .sky .ico-star-5 {
+
+.loan-box > .sky .ico-star-5 {
   top: 43%;
   right: 30%;
 }
-.loan-box .sky .ico-star-6 {
+
+.loan-box > .sky .ico-star-6 {
   top: 73%;
   right: 27%;
+}
+
+.loan-box > .sky .ico-star-7 {
+  top: 65%;
+  left: 22%;
 }
 
 @keyframes clittering {
@@ -342,55 +442,66 @@ html > body {
   }
 }
 
-.ico-star-1 {
+.loan-box > .sky .ico-star-1 {
   animation: clittering 2s infinite;
 }
 
-.ico-star-2 {
+.loan-box > .sky .ico-star-2 {
   animation: clittering 3s infinite;
 }
 
-.ico-star-3 {
+.loan-box > .sky .ico-star-3 {
   animation: clittering 5s infinite;
 }
 
-.ico-star-4 {
+.loan-box > .sky .ico-star-4 {
   animation: clittering 2s infinite;
 }
 
-.ico-star-5 {
+.loan-box > .sky .ico-star-5 {
   animation: clittering 4s infinite;
 }
 
-.ico-star-6 {
+.loan-box > .sky .ico-star-6 {
   animation: clittering 1.8s infinite;
 }
 
-.ico-star-7 {
+.loan-box > .sky .ico-star-7 {
   animation: clittering 3.5s infinite;
+}
+/* 대출박스 - 별 끝 */
+
+.loan-box > .con > .menu-box-1 {
+  margin-top: 20px;
+}
+
+.loan-box > .con > .menu-box-1 > ul > li {
+  margin: 0 3px;
 }
 
 .loan-box > .con > .menu-box-1 > ul > li > a {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 6px;
   width: 166px;
   height: 52px;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.09);
-  line-height: 51px;
-  color: #fff;
-}
-
-.loan-box > .con > .menu-box-1 > ul > li > a::after {
-  content: ">";
-  font-size: 6px;
-  margin-left: 8px;
+  padding-top: 4px;
 }
 
 .loan-box > .con > .menu-box-1 > ul > li:hover > a > span {
   text-decoration: underline;
+}
+
+.loan-box > .con > .menu-box-1 > ul > li > a::after {
+  content: " >";
+  font-size: 6px;
+  margin-left: 8px;
+}
+
+.loan-box > .con > .img-box-1 {
+  margin-top: 20px;
 }
 
 .loan-box > .con > .img-box-1 > img {
@@ -401,9 +512,9 @@ html > body {
   margin-right: auto;
 }
 
+/* 대출박스 끝 */
 
-/* 체크카드 구현 시작  */
-
+/* 체크 카드 구현 시작  */
 .checkcard-box {
   padding-top: 150px;
 }
@@ -414,32 +525,30 @@ html > body {
   color: #666;
 }
 
-.checkcard-box > .con > .btn-box > a {
+.checkcard-box .btn-box {
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.checkcard-box .btn-box > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
   background-color: #f6f6f6;
   width: 258px;
   height: 56px;
-  font-size: 16px;
-  line-height: 56px;
-  color: #333;
   border-radius: 10px;
 }
 
-.checkcard-box > .con > .btn-box > a::after {
-  content: " >";
-  margin-left: 10px;
-}
-
-.checkcard-box > .con > .btn-box:hover > a > span {
+.checkcard-box .btn-box > a:hover > span {
   text-decoration: underline;
 }
 
-.img-box > img {
-  width: 100%;
-  display: block;
-}
-
-.checkcard-box {
-  margin-top: 150px;
+.checkcard-box .btn-box > a::after {
+  content: ">";
+  margin-left: 10px;
 }
 
 .checkcard-box .slider-box-1 {
@@ -467,13 +576,18 @@ html > body {
 .checkcard-box .slider-box-1 .arrows > .btn-arrow {
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
   left: -170px;
-  transform: translatey(-50%);
   cursor: pointer;
+  opacity: 0.7;
+}
+
+.checkcard-box .slider-box-1 .arrows > .btn-arrow:hover {
+  opacity: 1;
 }
 
 .checkcard-box .slider-box-1 .arrows > .btn-arrow:active {
-  transform: translatey(-45%);
+  transform: translateY(-45%);
 }
 
 .checkcard-box .slider-box-1 .arrows > .btn-arrow.btn-arrow-right {
@@ -481,21 +595,32 @@ html > body {
   right: -170px;
 }
 
-/*IT 기술박스  */
+/* 체크 카드 구현 끝  */
+
+/* 아이티스킬박스 시작 */
+
 .itskill-box {
   padding-top: 150px;
-  background-color: #f9f9f9;
-  padding-bottom: 30px;
-  z-index: 0;
   position: relative;
+  background-color: #f9f9f9;
+  padding-bottom: 50px;
+  position: relative;
+  z-index: 0;
 }
 
 .itskill-box > .con > .divider {
+  margin-top: 50px;
   height: 2px;
+  display: flex;
+  justify-content: center;
+}
+
+.itskill-box > .con > .divider::after {
+  content: "";
+  display: block;
+  height: 100%;
   width: 100px;
   background-color: black;
-  display: block;
-  margin: 50px auto;
 }
 
 .itskill-box > .con > .info-box {
@@ -507,10 +632,10 @@ html > body {
 .itskill-box > .con > .info-box::before {
   content: "";
   position: absolute;
+  left: 0;
+  width: 100%;
   height: 1px;
   background-color: #eee;
-  width: 100%;
-  left: 0;
   transform: translateY(122px);
   z-index: -1;
 }
@@ -521,9 +646,9 @@ html > body {
 
 .itskill-box > .con > .info-box > ul > li > h1 {
   display: block;
-  margin: 45px 0 17px;
   font-size: 18px;
   font-weight: bold;
+  margin: 45px 0 17px;
 }
 
 .itskill-box > .con > .info-box > ul > li > .des {
@@ -534,9 +659,8 @@ html > body {
   font-weight: 200;
 }
 
-/* IT 기술박스 구현 끝  */
+/* 아이티스킬박스 끝 */
 
-/* 하단 바 시작 */
 /* 하단 바 구현 시작  */
 .bottom-bar {
   background-color: #eee;
@@ -552,10 +676,6 @@ html > body {
 .bottom-bar .box-1 .menu-1 ul > li > a {
   padding: 0 15px;
   position: relative;
-}
-
-.bottom-bar .box-1 .menu-1 ul > li:hover > a {
-	text-decoration: underline;
 }
 
 .bottom-bar
@@ -595,7 +715,7 @@ html > body {
 }
 
 .bottom-bar .box-3 {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .bottom-bar .box-3 .auth-mark {
